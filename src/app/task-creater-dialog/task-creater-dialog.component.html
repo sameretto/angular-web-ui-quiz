@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Create Task</h1>
+<div class="w-full" mat-dialog-content>
+  <mat-form-field required appearance="fill">
+    <mat-label>Task Name</mat-label>
+    <input matInput [(ngModel)]="data.task">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Description</mat-label>
+    <textarea [(ngModel)]="data.description" matInput placeholder=""></textarea>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Status</mat-label>
+    <mat-select [(ngModel)]="data.status">
+      <mat-option *ngFor="let status of allStatus" [value]="status.value">
+        {{status.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-raised-button [disabled]="!data.task || data.status == undefined" [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

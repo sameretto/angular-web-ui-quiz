@@ -1,0 +1,24 @@
+.task-app {
+  display: grid;
+  grid: max-content 1fr/1fr;
+  mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .edit-icon {
+    margin-right: 10px;
+  }
+
+  mat-icon {
+    cursor: pointer;
+  }
+
+  .mat-cell {
+    padding: 8px;
+  }
+
+  .id {
+    padding-left: 8px !important;
+  }
+}
